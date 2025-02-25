@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Mecha
   - Bocina
+  - Eliminar
+  - Suelo
   layers:
   - Default
   - TransparentFX
