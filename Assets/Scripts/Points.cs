@@ -19,8 +19,6 @@ public class Points : MonoBehaviour
 
     private void FixedUpdate()
     {
-        body.isKinematic = false;
-
         if(transform.position.y < -4)
         {
             Instantiate(tejo,spawnTejo.position,spawnTejo.rotation);
@@ -35,6 +33,15 @@ public class Points : MonoBehaviour
         {
             cont = 0;
             salio = false;
+        }
+
+        if (cont > 200)
+        {
+            salio = false;
+            body.isKinematic = false;
+            cont = 0;
+            Instantiate(tejo, spawnTejo.position, spawnTejo.rotation);
+            Destroy(gameObject);
         }
     }
 
@@ -56,11 +63,6 @@ public class Points : MonoBehaviour
         {
             body.isKinematic = true;
             salio = true;
-            if(cont >  200)
-            {
-                Instantiate(tejo, spawnTejo.position, spawnTejo.rotation);
-                Destroy(gameObject);
-            }
             Debug.Log("Entro");
         }
     }
