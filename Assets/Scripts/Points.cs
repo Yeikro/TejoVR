@@ -50,12 +50,13 @@ public class Points : MonoBehaviour
         if (other.gameObject.CompareTag("Mecha"))
         {
             score.i = score.i + 3;
+            Destroy(other.gameObject);
             Debug.Log("entro mecha");
         }
 
         if (other.gameObject.CompareTag("Bocina"))
         {
-            score.i = score.i + 6;
+            score.i = score.i + 2;
             Debug.Log("entro bocina");
         }
 
